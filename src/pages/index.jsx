@@ -1,11 +1,14 @@
 import Head from "next/head";
-import { useContext } from "react";
+import { useReducer } from "react";
+import { mainReducer } from "@/state/reducers";
 import { MainContext } from "@/state";
 import styles from "@/styles/Home.module.scss";
 import TodoList from "../components/todoList/TodoList";
 import { todos } from "../mock/todos";
 
 export default function Home() {
+  const [state, dispatch] = useReducer(mainReducer, todos);
+
   return (
     <>
       <Head>
@@ -14,7 +17,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MainContext.Provider value={todos}>
+      <MainContext.Provider value={{ state, dispatch }}>
         <main className={`${styles.Home}`}>
           <TodoList />
         </main>
