@@ -5,6 +5,7 @@ import { MainContext } from "@/state";
 import styles from "@/styles/Home.module.scss";
 import TodoList from "../components/todoList/TodoList";
 import { todos } from "../mock/todos";
+import Header from "@/components/header";
 
 export default function Home() {
   const [state, dispatch] = useReducer(mainReducer, todos);
@@ -19,6 +20,7 @@ export default function Home() {
       </Head>
       <MainContext.Provider value={{ state, dispatch }}>
         <main className={`${styles.Home}`}>
+          <Header />
           <TodoList />
         </main>
       </MainContext.Provider>
