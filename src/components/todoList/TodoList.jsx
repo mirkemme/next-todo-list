@@ -1,24 +1,17 @@
 import { useContext } from "react";
 import { MainContext } from "@/state";
 import styles from "./TodoList.module.scss";
+import TodoItem from "../todoItem";
 
 const TodoList = () => {
   const { state, dispatch } = useContext(MainContext);
-  const onHandleClick = (id) => {
-    dispatch({ type: "SET_COMPLETED", payload: id });
-  };
 
   return (
     <section className={styles.container}>
+      <h1>To do list</h1>
       <ul className={styles.TodoList}>
-        {state?.map((item) => (
-          <li
-            key={item?.id}
-            className={`${styles.todo} ${item.completed && styles.completed}`}
-            onClick={() => onHandleClick(item.id)}
-          >
-            {item?.todo}
-          </li>
+        {state?.map((todo) => (
+          <TodoItem todo={todo} key={todo.id} />
         ))}
       </ul>
     </section>

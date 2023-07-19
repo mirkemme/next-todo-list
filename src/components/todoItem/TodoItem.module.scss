@@ -1,0 +1,40 @@
+.todo {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(44, 44, 44, 0.5);
+  border: 1px solid rgba(255, 68, 0, 0.7);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.deleteBtn {
+  height: 100%;
+  width: 2rem;
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(189, 189, 189, 0.8);
+  border-left: 1px solid rgba(255, 68, 0, 0.7);
+
+  &:hover {
+    background-color: rgba(255, 68, 0, 0.2);
+  }
+}
+
+.completed {
+  background-color: rgba(68, 68, 68, 0.6);
+  color: rgb(114, 114, 114);
+  border: 1px solid rgb(82, 82, 82);
+
+  .deleteBtn {
+    border-left: 1px solid rgb(82, 82, 82);
+  }
+}
