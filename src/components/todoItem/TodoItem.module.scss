@@ -7,10 +7,14 @@
   align-items: center;
   justify-content: space-between;
   background-color: rgba(44, 44, 44, 0.5);
-  border: 1px solid rgba(255, 68, 0, 0.7);
+  border: 1px solid rgba(255, 83, 21, 0.7);
   border-radius: 0.4rem;
   cursor: pointer;
   transition: all 0.25s ease;
+}
+
+.content {
+  width: calc(100% - 2rem);
 }
 
 .deleteBtn {
@@ -22,10 +26,15 @@
   align-items: center;
   justify-content: center;
   color: rgba(189, 189, 189, 0.8);
-  border-left: 1px solid rgba(255, 68, 0, 0.7);
+  border-left: 1px solid rgba(255, 83, 21, 0.7);
+  transition: all 0.25s ease;
 
   &:hover {
-    background-color: rgba(255, 68, 0, 0.2);
+    background-color: rgba(255, 83, 21, 0.7);
+  }
+
+  &:active {
+    background-color: rgba(255, 68, 0, 0.7);
   }
 }
 
