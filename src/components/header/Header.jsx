@@ -33,9 +33,10 @@ const Navbar = () => {
           className={styles.inputContent}
           placeholder="Add new to do"
           onChange={onHandleChange}
+          required
         />
         <input type="submit" value="add" className={styles.addBtn} />
-        <input type="button" value="delete" className={styles.deleteBtn} />
+        <input type="button" value="login" className={styles.loginBtn} />
       </form>
     </header>
   );

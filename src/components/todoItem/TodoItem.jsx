@@ -15,19 +15,17 @@ const TodoItem = ({ todo }) => {
   };
 
   return (
-    <>
-      <li
-        className={`${styles.todo} ${todo.completed && styles.completed}`}
-        onClick={onHandleClick}
-      >
-        {todo?.content}
-        {isVisible && (
-          <span className={styles.deleteBtn} onClick={onHandleClickDelete}>
-            X
-          </span>
-        )}
-      </li>
-    </>
+    <li
+      className={`${styles.todo} ${todo.completed && styles.completed}`}
+      onClick={onHandleClick}
+    >
+      <span className={styles.content}>{todo?.content}</span>
+      {isVisible && (
+        <span className={styles.deleteBtn} onClick={onHandleClickDelete}>
+          X
+        </span>
+      )}
+    </li>
   );
 };
 
