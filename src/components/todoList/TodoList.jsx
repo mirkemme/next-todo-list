@@ -9,7 +9,13 @@ const TodoList = () => {
   return (
     <section className={styles.container}>
       <h1 className={styles.title}>
-        To do list di <span className={styles.username}> {state.username}</span>
+        {state.username ? (
+          <>
+            To do list di <span className={styles.username}>{state.username}</span>
+          </>
+        ) : (
+          <>Effettua il login</>
+        )}
       </h1>
       <ul className={styles.TodoList}>
         {state?.todos?.map((todo) => (

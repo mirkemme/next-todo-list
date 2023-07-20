@@ -12,7 +12,10 @@ export const mainReducer = (state, action) => {
     case "ADD_NEW_TODO":
       return { ...state, todos: [...state.todos, action.payload] };
     case "DELETE_TODO":
-      return state.todos.filter((todo) => todo.id !== action.payload);
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => todo.id !== action.payload),
+      };
     case "SET_USERNAME":
       return { ...state, username: action.payload };
     default:

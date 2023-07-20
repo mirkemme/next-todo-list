@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { MainContext } from "@/state";
 import styles from "./Header.module.scss";
 
-const Navbar = () => {
+const Header = () => {
   const [input, setInput] = useState("");
   const { state, dispatch } = useContext(MainContext);
 
@@ -37,6 +37,7 @@ const Navbar = () => {
           className={styles.inputContent}
           placeholder="Add new to do"
           onChange={onHandleChange}
+          disabled={!state.username}
           required
         />
         <input type="submit" value="add" className={styles.addBtn} />
@@ -51,4 +52,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
