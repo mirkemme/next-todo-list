@@ -2,10 +2,12 @@ import Head from "next/head";
 import { useReducer } from "react";
 import { mainReducer } from "@/state/reducers";
 import { MainContext } from "@/state";
+import { db } from "@/plugins/firebase";
 import styles from "@/styles/Home.module.scss";
 import TodoList from "../components/todoList/TodoList";
 import { initialState } from "../state/index";
 import Header from "@/components/header";
+import Login from "@/components/login";
 
 export default function Home() {
   const [state, dispatch] = useReducer(mainReducer, initialState);
@@ -21,7 +23,7 @@ export default function Home() {
       <MainContext.Provider value={{ state, dispatch }}>
         <main className={`${styles.Home}`}>
           <Header />
-          {state.username && <TodoList />}
+          {state.username ? <TodoList /> : <Login />}
         </main>
       </MainContext.Provider>
     </>
