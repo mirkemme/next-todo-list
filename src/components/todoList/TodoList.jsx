@@ -8,9 +8,11 @@ const TodoList = () => {
 
   return (
     <section className={styles.container}>
-      <h1>To do list</h1>
+      <h1 className={styles.title}>
+        To do list di <span className={styles.username}> {state.username}</span>
+      </h1>
       <ul className={styles.TodoList}>
-        {state?.map((todo) => (
+        {state?.todos?.map((todo) => (
           <TodoItem todo={todo} key={todo.id} />
         ))}
       </ul>

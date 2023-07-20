@@ -19,8 +19,12 @@ const Navbar = () => {
     setInput("");
   };
 
-  const onHandleChange = (event) => {
-    setInput(event.target.value);
+  const onHandleChange = (event) => setInput(event.target.value);
+
+  const onHandleClickLogin = () => {
+    state.username
+      ? dispatch({ type: "SET_USERNAME", payload: "" })
+      : dispatch({ type: "SET_USERNAME", payload: "toto_termini" });
   };
 
   return (
@@ -36,7 +40,12 @@ const Navbar = () => {
           required
         />
         <input type="submit" value="add" className={styles.addBtn} />
-        <input type="button" value="login" className={styles.loginBtn} />
+        <input
+          type="button"
+          value={state.username ? "logout" : "login"}
+          className={styles.loginBtn}
+          onClick={onHandleClickLogin}
+        />
       </form>
     </header>
   );

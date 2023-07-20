@@ -4,11 +4,11 @@ import { mainReducer } from "@/state/reducers";
 import { MainContext } from "@/state";
 import styles from "@/styles/Home.module.scss";
 import TodoList from "../components/todoList/TodoList";
-import { todos } from "../mock/todos";
+import { initialState } from "../state/index";
 import Header from "@/components/header";
 
 export default function Home() {
-  const [state, dispatch] = useReducer(mainReducer, todos);
+  const [state, dispatch] = useReducer(mainReducer, initialState);
 
   return (
     <>
@@ -21,7 +21,7 @@ export default function Home() {
       <MainContext.Provider value={{ state, dispatch }}>
         <main className={`${styles.Home}`}>
           <Header />
-          <TodoList />
+          {state.username && <TodoList />}
         </main>
       </MainContext.Provider>
     </>
