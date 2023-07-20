@@ -1,4 +1,4 @@
-export const todos = [
+export const mock = [
   {
     id: 0,
     content: "Lorem ipsum dolor sit amet.",
