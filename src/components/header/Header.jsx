@@ -40,7 +40,12 @@ const Header = () => {
           disabled={!state.username}
           required
         />
-        <input type="submit" value="add" className={styles.addBtn} />
+        <input
+          type="submit"
+          value="add"
+          className={styles.addBtn}
+          disabled={!state.username}
+        />
         <input
           type="button"
           value={state.username ? "logout" : "login"}
